@@ -18,7 +18,8 @@ export function useTasks(query, status, page, pageSize) {
       })
       .catch((err) => {
         setError(err.message);
-      });
+        setLoading(false);
+    });
   }, [query, status, page, pageSize]);
 
   return { tasks, total, loading, error };
